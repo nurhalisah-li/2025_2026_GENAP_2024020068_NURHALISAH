@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galeri Foto dan Video Universitas Handayani Makassar (UHM) - Suasana Kampus, Fasilitas Laboratorium, Kegiatan Mahasiswa, dan Wisuda.">
+  <title>Galeri Kampus | Universitas Handayani Makassar</title>
+  
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- jQuery 3.7.1 via CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-info">
+        <div class="top-info-item">
+          <span>Jl. Adiyaksa No. 2, Panakkukang, Makassar</span>
+        </div>
+        <div class="top-info-item">
+          <span>(0411) 458793</span>
+        </div>
+        <div class="top-info-item">
+          <span>info@handayani.ac.id</span>
+        </div>
+      </div>
+      <div class="top-links">
+        <a href="admission.html">PMB Online</a>
+        <a href="contact.html">Bantuan</a>
+        <a href="#">SIAKAD</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" id="main-brand-logo">
+        <img src="assets/logouhm.png" alt="Logo Universitas Handayani Makassar" class="brand-logo-img">
+        <div class="brand-text">
+          <h1>UNIVERSITAS HANDAYANI</h1>
+          <span>MAKASSAR</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="nav-link" id="nav-home">Beranda</a></li>
+          <li><a href="about.html" class="nav-link" id="nav-about">Tentang Kampus</a></li>
+          <li><a href="programs.html" class="nav-link" id="nav-programs">Program Studi</a></li>
+          <li><a href="news.html" class="nav-link" id="nav-news">Berita</a></li>
+          <li><a href="gallery.html" class="nav-link active" id="nav-gallery">Galeri</a></li>
+          <li><a href="contact.html" class="nav-link" id="nav-contact">Kontak</a></li>
+          <li><a href="admission.html" class="nav-link btn-nav-pmb" id="nav-admission">Daftar PMB</a></li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" id="hamburger-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Page Header / Breadcrumb Banner -->
+  <section style="background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: #fff; padding: 4rem 0 3.5rem 0; border-bottom: 3px solid var(--accent);">
+    <div class="container" style="text-align: center;">
+      <div style="font-size: 0.9rem; color: var(--accent); font-weight: 700; margin-bottom: 0.5rem;">
+        <a href="index.html" style="color: var(--text-light);">Beranda</a> &nbsp;/&nbsp; Galeri Kampus
+      </div>
+      <h1 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1rem;">Galeri Foto Kampus</h1>
+      <p style="font-size: 1.1rem; color: var(--text-light); max-width: 680px; margin: 0 auto;">
+        Dokumentasi visual keindahan kampus, fasilitas praktikum, keceriaan kegiatan mahasiswa, dan momen wisuda UHM.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filter Category Buttons -->
+  <section class="section-bg-alt" style="padding: 1.5rem 0; border-bottom: 1px solid var(--border);">
+    <div class="container" style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;" id="galleryCategoryTabs">
+      <button class="btn gallery-filter-btn active" data-cat="all" style="padding: 0.5rem 1.3rem; font-size: 0.9rem; background: var(--primary); color: #fff;">Semua Foto</button>
+      <button class="btn gallery-filter-btn" data-cat="Fasilitas" style="padding: 0.5rem 1.3rem; font-size: 0.9rem; background: var(--surface); border: 1px solid var(--border); color: var(--text-main);">Fasilitas</button>
+      <button class="btn gallery-filter-btn" data-cat="Kegiatan" style="padding: 0.5rem 1.3rem; font-size: 0.9rem; background: var(--surface); border: 1px solid var(--border); color: var(--text-main);">Kegiatan</button>
+      <button class="btn gallery-filter-btn" data-cat="Wisuda" style="padding: 0.5rem 1.3rem; font-size: 0.9rem; background: var(--surface); border: 1px solid var(--border); color: var(--text-main);">Wisuda</button>
+    </div>
+  </section>
+
+  <!-- Gallery Main Content Container -->
+  <main class="container" style="padding: 4rem 1.5rem;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem;" id="galleryGrid">
+      <!-- Rendered dynamically by jQuery script -->
+    </div>
+  </main>
+
+  <!-- Interactive Lightbox Modal -->
+  <div id="lightboxModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(7, 25, 51, 0.92); backdrop-filter: blur(8px); z-index: 2500; align-items: center; justify-content: center; padding: 2rem;">
+    <button id="closeLightboxBtn" style="position: absolute; top: 1.5rem; right: 2rem; background: none; border: none; font-size: 2.5rem; color: #fff; cursor: pointer; z-index: 2510;">&times;</button>
+    <button id="prevLightboxBtn" style="position: absolute; left: 2rem; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.15); border: none; color: #fff; font-size: 2rem; padding: 0.8rem 1.2rem; border-radius: 50%; cursor: pointer; backdrop-filter: blur(4px); z-index: 2510;">&#10094;</button>
+    <button id="nextLightboxBtn" style="position: absolute; right: 2rem; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.15); border: none; color: #fff; font-size: 2rem; padding: 0.8rem 1.2rem; border-radius: 50%; cursor: pointer; backdrop-filter: blur(4px); z-index: 2510;">&#10095;</button>
+    
+    <div style="max-width: 900px; width: 100%; text-align: center;">
+      <img id="lightboxImg" src="" alt="" style="max-width: 100%; max-height: 75vh; border-radius: var(--radius-md); box-shadow: 0 20px 40px rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.2);">
+      <h3 id="lightboxCaption" style="color: #fff; font-size: 1.2rem; margin-top: 1.2rem; font-weight: 700;"></h3>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 1.2rem;">
+            <img src="assets/logouhm.png" alt="Logo Universitas Handayani Makassar" class="brand-logo-img">
+            <div class="brand-text">
+              <h1 style="color: #fff;">UNIVERSITAS HANDAYANI</h1>
+              <span>MAKASSAR</span>
+            </div>
+          </div>
+          <p>Universitas Handayani Makassar adalah institusi perguruan tinggi swasta terdepan yang berfokus pada pengembangan teknologi, sains, dan jiwa kewirausahaan.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigasi Cepat</h4>
+          <div class="footer-links">
+            <a href="index.html">Beranda</a>
+            <a href="about.html">Tentang Kampus</a>
+            <a href="programs.html">Program Studi</a>
+            <a href="news.html">Berita</a>
+            <a href="gallery.html">Galeri</a>
+            <a href="admission.html">PMB Online</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Fakultas</h4>
+          <div class="footer-links">
+            <a href="programs.html#fasilkom">Fakultas Ilmu Komputer</a>
+            <a href="programs.html#fhis">Fakultas Hukum & Ilmu Sosial</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kontak & Lokasi</h4>
+          <div class="footer-contact-item">
+            <span>Jl. Adiyaksa No. 2, Panakkukang, Kota Makassar, Sulawesi Selatan 90231</span>
+          </div>
+          <div class="footer-contact-item">
+            <span>(0411) 458793</span>
+          </div>
+          <div class="footer-contact-item">
+            <span>info@handayani.ac.id</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Universitas Handayani Makassar. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mock Data & Main Script -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    $(document).ready(function() {
+      let currentCategory = 'all';
+
+      let currentGalleryItems = [];
+      let currentIndex = 0;
+
+      function renderGallery() {
+        if (typeof UHM_DATA === 'undefined') return;
+
+        let html = '';
+        currentGalleryItems = [];
+
+        // Photos
+        UHM_DATA.gallery.forEach(item => {
+          if (currentCategory !== 'all' && item.category !== currentCategory) {
+            return;
+          }
+
+          currentGalleryItems.push(item);
+          const itemIndex = currentGalleryItems.length - 1;
+
+          html += `
+            <div class="gallery-item-card" style="background: var(--surface); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); cursor: pointer; transition: var(--transition);">
+              <div style="position: relative; height: 220px; overflow: hidden;" class="gallery-img-box" data-index="${itemIndex}">
+                <img src="${item.image}" alt="${item.title}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                <span style="position: absolute; top: 1rem; left: 1rem; background: rgba(15,44,89,0.85); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 0.25rem 0.7rem; border-radius: 4px; backdrop-filter: blur(4px);">${item.category}</span>
+              </div>
+              <div style="padding: 1.2rem;">
+                <h4 style="font-size: 1rem; font-weight: 700; color: var(--primary);">${item.title}</h4>
+              </div>
+            </div>
+          `;
+        });
+
+        $('#galleryGrid').html(html);
+      }
+
+      renderGallery();
+
+      function updateLightboxItem(index) {
+        if (currentGalleryItems.length === 0) return;
+        if (index < 0) index = currentGalleryItems.length - 1;
+        if (index >= currentGalleryItems.length) index = 0;
+        currentIndex = index;
+
+        const item = currentGalleryItems[currentIndex];
+        $('#lightboxImg').attr('src', item.image);
+        $('#lightboxCaption').text(item.title);
+      }
+
+      // Tab filter
+      $('.gallery-filter-btn').on('click', function() {
+        $('.gallery-filter-btn').css({ background: 'var(--surface)', color: 'var(--text-main)', border: '1px solid var(--border)' });
+        $(this).css({ background: 'var(--primary)', color: '#fff', border: 'none' });
+
+        currentCategory = $(this).data('cat');
+        renderGallery();
+      });
+
+      // Lightbox click
+      $(document).on('click', '.gallery-img-box', function() {
+        const idx = parseInt($(this).data('index'), 10);
+        updateLightboxItem(idx);
+        $('#lightboxModal').css('display', 'flex');
+      });
+
+      $('#prevLightboxBtn').on('click', function(e) {
+        e.stopPropagation();
+        updateLightboxItem(currentIndex - 1);
+      });
+
+      $('#nextLightboxBtn').on('click', function(e) {
+        e.stopPropagation();
+        updateLightboxItem(currentIndex + 1);
+      });
+
+      // Close Lightbox
+      $('#closeLightboxBtn, #lightboxModal').on('click', function(e) {
+        if (e.target === this || e.target.id === 'closeLightboxBtn') {
+          $('#lightboxModal').hide();
+        }
+      });
+
+      $(document).on('keydown', function(e) {
+        if ($('#lightboxModal').is(':visible')) {
+          if (e.key === 'ArrowLeft') updateLightboxItem(currentIndex - 1);
+          if (e.key === 'ArrowRight') updateLightboxItem(currentIndex + 1);
+          if (e.key === 'Escape') $('#lightboxModal').hide();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
