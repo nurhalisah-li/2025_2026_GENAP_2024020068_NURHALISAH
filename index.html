@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Universitas Handayani Makassar</title>
+    <meta name="description" content="Website Resmi Universitas Handayani Makassar. Mencetak generasi unggul, inovatif, dan berintegritas di era digital.">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Menggunakan jQuery sesuai aturan PRD -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="assets/handayani.png" alt="Logo UHM"> UNIVERSITAS HANDAYANI MAKASSAR
+            </a>
+            
+            <!-- Tombol menu mobile -->
+            <button class="mobile-menu-btn" id="mobile-menu-toggle">
+                &#9776;
+            </button>
+
+            <!-- Link Navigasi -->
+            <ul class="nav-links label-caps" id="nav-menu">
+                <li><a href="index.html" class="active">Beranda</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="program-studi.html">Program Studi</a></li>
+                <li><a href="berita.html">Berita & Acara</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+                <li><a href="pendaftaran.html">Pendaftaran</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <header class="hero-banner">
+        <div class="container hero-content">
+            <h1 class="display-lg">SELAMAT DATANG DI UNIVERSITAS HANDAYANI MAKASSAR</h1>
+            <p class="body-lg">Universitas Handayani Makassar hadir sebagai pusat keunggulan akademik yang mengintegrasikan nilai-nilai tradisi dan inovasi teknologi untuk mencetak pemimpin masa depan.</p>
+            <div class="hero-actions">
+                <a href="pendaftaran.html" class="btn btn-primary" style="background-color: var(--color-secondary-container); color: var(--color-primary); border: none;">Daftar Sekarang</a>
+                <a href="tentang.html" class="btn btn-secondary" style="border-color: rgba(255,255,255,0.5); color: #fff;">Pelajari Lebih Lanjut</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Informasi Singkat Section -->
+    <!-- Mengapa Memilih UHM Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="headline-md">Mengapa Memilih UHM?</h2>
+                <p class="body-md">Kami berkomitmen memberikan pengalaman akademik terbaik dengan fasilitas modern dan tenaga pengajar profesional.</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card" style="padding: 40px 24px; text-align: center;">
+                    <div style="width: 80px; height: 80px; margin: 0 auto 24px; background: linear-gradient(135deg, var(--color-secondary-container), #d4af37); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 20px rgba(252,212,0,0.2);">
+                        📘
+                    </div>
+                    <h3 class="headline-sm">Kurikulum Terkini</h3>
+                    <p class="body-md">Dirancang khusus untuk memenuhi kebutuhan industri global dengan mengedepankan praktik dan teori yang relevan.</p>
+                </div>
+                
+                <div class="card" style="padding: 40px 24px; text-align: center;">
+                    <div style="width: 80px; height: 80px; margin: 0 auto 24px; background: linear-gradient(135deg, var(--color-secondary-container), #d4af37); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 20px rgba(252,212,0,0.2);">
+                        🏢
+                    </div>
+                    <h3 class="headline-sm">Fasilitas Modern</h3>
+                    <p class="body-md">Didukung dengan laboratorium mutakhir, perpustakaan digital, dan lingkungan belajar yang sangat memadai.</p>
+                </div>
+                
+                <div class="card" style="padding: 40px 24px; text-align: center;">
+                    <div style="width: 80px; height: 80px; margin: 0 auto 24px; background: linear-gradient(135deg, var(--color-secondary-container), #d4af37); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 20px rgba(252,212,0,0.2);">
+                        👨‍🏫
+                    </div>
+                    <h3 class="headline-sm">Pengajar Ahli</h3>
+                    <p class="body-md">Dibimbing langsung oleh para akademisi dan praktisi profesional di bidangnya masing-masing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlight Program Studi -->
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-2" style="align-items: center;">
+                <div>
+                    <h2 class="headline-md" style="margin-bottom: var(--spacing-sm);">Jelajahi Program Studi Kami</h2>
+                    <p class="body-lg" style="margin-bottom: var(--spacing-lg);">Temukan jurusan yang tepat untuk minat dan bakat Anda. Kami menawarkan berbagai program studi unggulan yang dirancang untuk mengoptimalkan potensi mahasiswa.</p>
+                    <a href="program-studi.html" class="btn btn-primary">Lihat Semua Program Studi</a>
+                </div>
+                <div class="grid grid-2">
+                    <div class="card" style="padding: var(--spacing-md); text-align: center;">
+                        <h4 class="headline-sm">Ilmu Komputer</h4>
+                        <p class="body-md">Fokus pada rekayasa perangkat lunak dan kecerdasan buatan.</p>
+                    </div>
+                    <div class="card" style="padding: var(--spacing-md); text-align: center;">
+                        <h4 class="headline-sm">Hukum</h4>
+                        <p class="body-md">Membentuk ahli hukum berintegritas dan profesional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-3">
+                <div>
+                    <h3 class="headline-sm" style="margin-bottom: 16px;">UNIVERSITAS HANDAYANI MAKASSAR</h3>
+                    <p class="body-md">Mencetak generasi unggul, inovatif, dan berintegritas di era digital.</p>
+                </div>
+                <div>
+                    <h4 class="label-caps" style="margin-bottom: 16px; color: var(--color-secondary-container);">Tautan Cepat</h4>
+                    <ul class="body-md" style="line-height: 2;">
+                        <li><a href="tentang.html">Tentang Kampus</a></li>
+                        <li><a href="program-studi.html">Program Studi</a></li>
+                        <li><a href="pendaftaran.html">Pendaftaran Mahasiswa Baru</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="label-caps" style="margin-bottom: 16px; color: var(--color-secondary-container);">Kontak</h4>
+                    <p class="body-md">Jl. Adhyaksa Baru No. 1, Makassar<br>
+                    Telp: (0411) 123456<br>
+                    Email: info@handayani.ac.id</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Universitas Handayani Makassar. Hak Cipta Dilindungi Undang-Undang.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Interaksi -->
+    <script>
+        $(document).ready(function(){
+            // Mobile Menu Toggle
+            $("#mobile-menu-toggle").click(function(){
+                $("#nav-menu").slideToggle(300);
+            });
+
+            // Handle window resize for menu display
+            $(window).resize(function(){
+                if($(window).width() > 767) {
+                    $("#nav-menu").css("display", "flex");
+                } else {
+                    $("#nav-menu").css("display", "none");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

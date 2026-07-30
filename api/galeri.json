@@ -1,0 +1,100 @@
+{
+  "status": "success",
+  "message": "Data retrieved successfully",
+  "data": {
+    "albums": [
+      {
+        "id": 1,
+        "name": "Semua",
+        "slug": "all"
+      },
+      {
+        "id": 2,
+        "name": "Fasilitas",
+        "slug": "fasilitas"
+      },
+      {
+        "id": 3,
+        "name": "Wisuda",
+        "slug": "wisuda"
+      },
+      {
+        "id": 4,
+        "name": "Kegiatan Mahasiswa",
+        "slug": "kegiatan"
+      },
+      {
+        "id": 5,
+        "name": "Video",
+        "slug": "video"
+      }
+    ],
+    "media": [
+      {
+        "id": 101,
+        "album_slug": "fasilitas",
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&q=80&w=600",
+        "caption": "Gedung Utama Kampus Terpadu"
+      },
+      {
+        "id": 102,
+        "album_slug": "fasilitas",
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&q=80&w=600",
+        "caption": "Perpustakaan Digital Terpusat"
+      },
+      {
+        "id": 103,
+        "album_slug": "fasilitas",
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600",
+        "caption": "Laboratorium Komputer & AI"
+      },
+      {
+        "id": 104,
+        "album_slug": "wisuda",
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=600",
+        "caption": "Wisuda Angkatan 2025"
+      },
+      {
+        "id": 105,
+        "album_slug": "wisuda",
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1627556592933-ffe99c1c9aa8?auto=format&fit=crop&q=80&w=600",
+        "caption": "Momen Perayaan Kelulusan"
+      },
+      {
+        "id": 106,
+        "album_slug": "kegiatan",
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&q=80&w=600",
+        "caption": "Seminar Nasional Teknologi"
+      },
+      {
+        "id": 107,
+        "album_slug": "kegiatan",
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600",
+        "caption": "Kolaborasi Riset Mahasiswa"
+      },
+      {
+        "id": 108,
+        "album_slug": "video",
+        "type": "video",
+        "url": "https://www.w3schools.com/html/mov_bbb.mp4",
+        "poster_url": "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=600",
+        "caption": "Profil Video Kampus"
+      },
+      {
+        "id": 109,
+        "album_slug": "video",
+        "type": "video",
+        "url": "https://www.w3schools.com/html/mov_bbb.mp4",
+        "poster_url": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600",
+        "caption": "Liputan Kegiatan Sosial"
+      }
+    ]
+  }
+}

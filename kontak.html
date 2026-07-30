@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Kami - Universitas Handayani Makassar</title>
+    <meta name="description" content="Hubungi Universitas Handayani Makassar. Kami siap membantu Anda.">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Menggunakan jQuery sesuai aturan PRD -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="assets/handayani.png" alt="Logo UHM"> UNIVERSITAS HANDAYANI MAKASSAR
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-toggle">
+                &#9776;
+            </button>
+
+            <ul class="nav-links label-caps" id="nav-menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="program-studi.html">Program Studi</a></li>
+                <li><a href="berita.html">Berita & Acara</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="kontak.html" class="active">Kontak</a></li>
+                <li><a href="pendaftaran.html">Pendaftaran</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header (Hero) -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="display-lg">Hubungi Kami</h1>
+            <p class="body-lg" style="margin-top: var(--spacing-md); color: rgba(255,255,255,0.8);">Kami terbuka untuk pertanyaan, kerja sama, dan informasi pendaftaran.</p>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-2">
+                <!-- Bagian Form -->
+                <div>
+                    <h2 class="headline-md" style="margin-bottom: var(--spacing-sm);">Tinggalkan Pesan</h2>
+                    <p class="body-md" style="margin-bottom: var(--spacing-lg);">Gunakan formulir di bawah ini untuk mengirimkan pesan langsung ke tim administrasi kami.</p>
+                    
+                    <div id="contactAlert" class="alert alert-success">
+                        <strong>Berhasil!</strong> Pesan Anda telah kami terima.
+                    </div>
+
+                    <form id="contactForm" class="card" style="padding: var(--spacing-lg); border: none; box-shadow: 0 4px 15px rgba(0,0,0,0.05);" novalidate>
+                        <div class="form-group">
+                            <label for="nama" class="form-label">Nama Lengkap</label>
+                            <input type="text" id="nama" class="form-control" required placeholder="Masukkan nama lengkap Anda">
+                            <span class="error-message">Nama lengkap wajib diisi.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-control" required placeholder="nama@email.com">
+                            <span class="error-message">Format email tidak valid.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="subjek" class="form-label">Subjek</label>
+                            <input type="text" id="subjek" class="form-control" required placeholder="Topik pesan">
+                            <span class="error-message">Subjek wajib diisi.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="pesan" class="form-label">Pesan Anda</label>
+                            <textarea id="pesan" class="form-control" required placeholder="Tuliskan pesan Anda di sini..."></textarea>
+                            <span class="error-message">Pesan wajib diisi.</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Kirim Pesan</button>
+                    </form>
+                </div>
+
+                <!-- Bagian Info & Maps -->
+                <div style="display: flex; flex-direction: column; gap: var(--spacing-lg);">
+                    <div>
+                        <h2 class="headline-md" style="margin-bottom: var(--spacing-sm);">Informasi Kontak</h2>
+                        <ul style="list-style: none; display: flex; flex-direction: column; gap: 16px;">
+                            <li style="display: flex; gap: 12px; align-items: flex-start;">
+                                <span style="font-size: 24px;">&#128205;</span>
+                                <div>
+                                    <strong>Alamat Utama</strong><br>
+                                    Jl. Adhyaksa Baru No. 1, Panakkukang, Makassar, Sulawesi Selatan
+                                </div>
+                            </li>
+                            <li style="display: flex; gap: 12px; align-items: flex-start;">
+                                <span style="font-size: 24px;">&#128222;</span>
+                                <div>
+                                    <strong>Telepon</strong><br>
+                                    (0411) 123456 / +62 812-3456-7890
+                                </div>
+                            </li>
+                            <li style="display: flex; gap: 12px; align-items: flex-start;">
+                                <span style="font-size: 24px;">&#9993;&#65039;</span>
+                                <div>
+                                    <strong>Email Resmi</strong><br>
+                                    info@handayani.ac.id
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="headline-sm" style="margin-bottom: var(--spacing-sm);">Peta Lokasi</h3>
+                        <div style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-border); height: 300px; background-color: var(--color-tertiary); position: relative;">
+                            <iframe src="https://maps.google.com/maps?q=Universitas%20Handayani%20Makassar&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-3">
+                <div>
+                    <h3 class="headline-sm" style="margin-bottom: 16px;">UNIVERSITAS HANDAYANI MAKASSAR</h3>
+                    <p class="body-md">Mencetak generasi unggul, inovatif, dan berintegritas di era digital.</p>
+                </div>
+                <div>
+                    <h4 class="label-caps" style="margin-bottom: 16px; color: var(--color-secondary-container);">Tautan Cepat</h4>
+                    <ul class="body-md" style="line-height: 2;">
+                        <li><a href="tentang.html">Tentang Kampus</a></li>
+                        <li><a href="program-studi.html">Program Studi</a></li>
+                        <li><a href="pendaftaran.html">Pendaftaran Mahasiswa Baru</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="label-caps" style="margin-bottom: 16px; color: var(--color-secondary-container);">Kontak</h4>
+                    <p class="body-md">Jl. Adhyaksa Baru No. 1, Makassar<br>
+                    Telp: (0411) 123456<br>
+                    Email: info@handayani.ac.id</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Universitas Handayani Makassar. Hak Cipta Dilindungi Undang-Undang.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Interaksi -->
+    <script>
+        $(document).ready(function(){
+            // Mobile Menu Toggle
+            $("#mobile-menu-toggle").click(function(){
+                $("#nav-menu").slideToggle(300);
+            });
+
+            // Handle window resize for menu display
+            $(window).resize(function(){
+                if($(window).width() > 767) {
+                    $("#nav-menu").css("display", "flex");
+                } else {
+                    $("#nav-menu").css("display", "none");
+                }
+            });
+
+            // Form Submit & Validation
+            $("#contactForm").submit(function(e){
+                e.preventDefault();
+                
+                // Reset errors
+                $(".form-control").removeClass("is-invalid");
+                $(".error-message").hide();
+                $("#contactAlert").hide();
+                
+                let isValid = true;
+                
+                // Validate Nama
+                if($("#nama").val().trim() === "") {
+                    $("#nama").addClass("is-invalid").siblings(".error-message").show();
+                    isValid = false;
+                }
+                
+                // Validate Email
+                const email = $("#email").val().trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if(email === "" || !emailRegex.test(email)) {
+                    $("#email").addClass("is-invalid").siblings(".error-message").show();
+                    isValid = false;
+                }
+                
+                // Validate Subjek
+                if($("#subjek").val().trim() === "") {
+                    $("#subjek").addClass("is-invalid").siblings(".error-message").show();
+                    isValid = false;
+                }
+                
+                // Validate Pesan
+                if($("#pesan").val().trim() === "") {
+                    $("#pesan").addClass("is-invalid").siblings(".error-message").show();
+                    isValid = false;
+                }
+                
+                if(isValid) {
+                    // Tampilkan notifikasi sukses
+                    $("#contactAlert").slideDown();
+                    // Reset form
+                    this.reset();
+                    
+                    // Sembunyikan notifikasi setelah 5 detik
+                    setTimeout(() => {
+                        $("#contactAlert").slideUp();
+                    }, 5000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

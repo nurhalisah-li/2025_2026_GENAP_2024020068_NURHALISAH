@@ -1,0 +1,60 @@
+{
+  "status": "success",
+  "message": "Berita dan Acara berhasil diambil",
+  "data": {
+    "news": [
+      {
+        "id": "NWS-001",
+        "title": "Tim Robotik UHM Raih Juara 1 Nasional",
+        "category": "Prestasi",
+        "date_published": "2026-05-10",
+        "date_formatted": "10 Mei 2026",
+        "excerpt": "Tim mahasiswa Fakultas Ilmu Komputer berhasil menciptakan robot pemadam api yang mengalahkan 50 universitas lainnya...",
+        "image_url": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600",
+        "detail_url": "berita-1.html"
+      },
+      {
+        "id": "NWS-002",
+        "title": "Penandatanganan MoU dengan Universitas di Jepang",
+        "category": "Kerja Sama",
+        "date_published": "2026-05-05",
+        "date_formatted": "5 Mei 2026",
+        "excerpt": "Dalam rangka meningkatkan kualitas riset, UHM resmi bekerja sama dengan Tokyo Tech University...",
+        "image_url": "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=600",
+        "detail_url": "#"
+      },
+      {
+        "id": "NWS-003",
+        "title": "Mahasiswa Fakultas Hukum Sosialisasi Anti Korupsi",
+        "category": "Pengabdian",
+        "date_published": "2026-05-01",
+        "date_formatted": "1 Mei 2026",
+        "excerpt": "Mengedukasi masyarakat desa tentang pentingnya transparansi dana desa dan kesadaran hukum dasar...",
+        "image_url": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=600",
+        "detail_url": "#"
+      }
+    ],
+    "events": [
+      {
+        "id": "EVT-001",
+        "title": "Seminar Nasional AI & Hukum Cyber",
+        "date": "2026-06-15",
+        "date_formatted": "15 Juni",
+        "time": "09:00 - 15:00 WITA",
+        "location": "Auditorium Utama UHM",
+        "description": "Kolaborasi Fakultas Ilmu Komputer dan Hukum membahas tantangan era digital.",
+        "detail_url": "acara-1.html"
+      },
+      {
+        "id": "EVT-002",
+        "title": "Wisuda Sarjana & Diploma Gelombang I",
+        "date": "2026-07-28",
+        "date_formatted": "28 Juli",
+        "time": "08:00 - Selesai",
+        "location": "Hotel Claro Makassar",
+        "description": "Pengukuhan lulusan sarjana dan diploma Universitas Handayani Makassar.",
+        "detail_url": "#"
+      }
+    ]
+  }
+}

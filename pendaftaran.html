@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran - Universitas Handayani Makassar</title>
+    <meta name="description" content="Informasi dan formulir pendaftaran mahasiswa baru Universitas Handayani Makassar.">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Menggunakan jQuery sesuai aturan PRD -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="assets/handayani.png" alt="Logo UHM"> UNIVERSITAS HANDAYANI MAKASSAR
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-toggle">
+                &#9776;
+            </button>
+
+            <ul class="nav-links label-caps" id="nav-menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="program-studi.html">Program Studi</a></li>
+                <li><a href="berita.html">Berita & Acara</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+                <li><a href="pendaftaran.html" class="active">Pendaftaran</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header (Hero) -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="display-lg">Pendaftaran Mahasiswa Baru</h1>
+            <p class="body-lg" style="margin-top: var(--spacing-md); color: rgba(255,255,255,0.8);">Bergabunglah bersama ribuan mahasiswa lainnya dan ukir masa depan yang gemilang.</p>
+        </div>
+    </header>
+
+    <!-- Admission Section -->
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-2">
+                <!-- Bagian Informasi Prosedur -->
+                <div style="display: flex; flex-direction: column; gap: var(--spacing-lg);">
+                    
+                    <!-- Langkah-Langkah -->
+                    <div>
+                        <h2 class="headline-md" style="margin-bottom: var(--spacing-sm);">Langkah Pendaftaran</h2>
+                        <ol style="margin-left: 20px; display: flex; flex-direction: column; gap: 8px;" class="body-md">
+                            <li>Isi formulir pendaftaran awal di halaman ini.</li>
+                            <li>Lakukan pembayaran biaya formulir (simulasi transfer).</li>
+                            <li>Ikuti ujian saringan masuk berbasis komputer (CBT).</li>
+                            <li>Tunggu pengumuman hasil ujian.</li>
+                            <li>Daftar ulang dan melengkapi berkas fisik.</li>
+                        </ol>
+                    </div>
+
+                    <!-- Syarat Pendaftaran -->
+                    <div>
+                        <h2 class="headline-md" style="margin-bottom: var(--spacing-sm);">Syarat Pendaftaran</h2>
+                        <ul style="margin-left: 20px; list-style-type: square; display: flex; flex-direction: column; gap: 8px;" class="body-md">
+                            <li>Lulusan SMA/SMK/MA sederajat atau paket C.</li>
+                            <li>Menyerahkan fotokopi Ijazah & Transkrip Nilai yang dilegalisir (2 lembar).</li>
+                            <li>Menyerahkan fotokopi KTP dan Kartu Keluarga (2 lembar).</li>
+                            <li>Pas foto terbaru ukuran 3x4 dan 4x6 (masing-masing 4 lembar).</li>
+                            <li>Tidak buta warna (khusus untuk prodi Teknik Informatika).</li>
+                        </ul>
+                    </div>
+
+                    <!-- Jadwal -->
+                    <div>
+                        <h2 class="headline-md" style="margin-bottom: var(--spacing-sm);">Jadwal Penerimaan</h2>
+                        <div style="border-radius: var(--radius-sm); border: 1px dashed var(--color-border); background-color: rgba(255, 255, 255, 0.05); padding: 16px; display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 28px;">&#128197;</span>
+                            <div>
+                                <h3 style="margin-bottom: 4px; font-size: 16px; font-weight: bold;">Coming Soon!</h3>
+                                <p style="color: var(--color-text-body); margin: 0; font-size: 14px; line-height: 1.4;">Jadwal pendaftaran mahasiswa baru belum dirilis. Silakan pantau terus website kami.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Bagian Form Simulasi -->
+                <div>
+                    <h2 class="headline-md" style="margin-bottom: var(--spacing-sm);">Formulir Pendaftaran</h2>
+                    <p class="body-md" style="margin-bottom: var(--spacing-lg);">Silakan isi data diri Anda untuk memulai proses pendaftaran mahasiswa baru (Form Simulasi).</p>
+                    
+                    <div id="admissionAlert" class="alert alert-success">
+                        <strong>Pendaftaran Berhasil!</strong><br>
+                        Data pendaftaran awal Anda telah kami terima. Silakan cek email Anda untuk instruksi pembayaran biaya formulir.
+                    </div>
+
+                    <form id="admissionForm" class="card" style="padding: var(--spacing-lg); border: none; box-shadow: 0 4px 15px rgba(0,0,0,0.05); background-color: var(--color-tertiary);" novalidate>
+                        <div class="form-group">
+                            <label for="reg-nama" class="form-label">Nama Lengkap (Sesuai Ijazah)</label>
+                            <input type="text" id="reg-nama" class="form-control" required placeholder="Contoh: Budi Santoso">
+                            <span class="error-message">Nama lengkap wajib diisi.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-email" class="form-label">Alamat Email Aktif</label>
+                            <input type="email" id="reg-email" class="form-control" required placeholder="budi@email.com">
+                            <span class="error-message">Format email tidak valid.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-sekolah" class="form-label">Asal Sekolah</label>
+                            <input type="text" id="reg-sekolah" class="form-control" required placeholder="Contoh: SMAN 1 Makassar">
+                            <span class="error-message">Asal sekolah wajib diisi.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-prodi" class="form-label">Pilihan Program Studi</label>
+                            <select id="reg-prodi" class="form-control" required style="cursor: pointer;">
+                                <option value="" disabled selected>-- Pilih Program Studi --</option>
+                                <optgroup label="Fakultas Ilmu Komputer">
+                                    <option value="S1 Teknik Informatika">S1 Teknik Informatika</option>
+                                    <option value="S1 Sistem Informasi">S1 Sistem Informasi</option>
+                                    <option value="D3 Manajemen Informatika">D3 Manajemen Informatika</option>
+                                </optgroup>
+                                <optgroup label="Fakultas Hukum">
+                                    <option value="S1 Ilmu Hukum">S1 Ilmu Hukum</option>
+                                </optgroup>
+                            </select>
+                            <span class="error-message">Silakan pilih program studi.</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 16px;">Kirim Data Pendaftaran</button>
+                        <p style="font-size: 12px; margin-top: 16px; color: #666; text-align: center;">
+                            *Dengan menekan tombol di atas, Anda menyatakan bahwa data yang diisi adalah benar.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-3">
+                <div>
+                    <h3 class="headline-sm" style="margin-bottom: 16px;">UNIVERSITAS HANDAYANI MAKASSAR</h3>
+                    <p class="body-md">Mencetak generasi unggul, inovatif, dan berintegritas di era digital.</p>
+                </div>
+                <div>
+                    <h4 class="label-caps" style="margin-bottom: 16px; color: var(--color-secondary-container);">Tautan Cepat</h4>
+                    <ul class="body-md" style="line-height: 2;">
+                        <li><a href="tentang.html">Tentang Kampus</a></li>
+                        <li><a href="program-studi.html">Program Studi</a></li>
+                        <li><a href="pendaftaran.html">Pendaftaran Mahasiswa Baru</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="label-caps" style="margin-bottom: 16px; color: var(--color-secondary-container);">Kontak</h4>
+                    <p class="body-md">Jl. Adhyaksa Baru No. 1, Makassar<br>
+                    Telp: (0411) 123456<br>
+                    Email: info@handayani.ac.id</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Universitas Handayani Makassar. Hak Cipta Dilindungi Undang-Undang.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Interaksi -->
+    <script>
+        $(document).ready(function(){
+            // Mobile Menu Toggle
+            $("#mobile-menu-toggle").click(function(){
+                $("#nav-menu").slideToggle(300);
+            });
+
+            // Handle window resize for menu display
+            $(window).resize(function(){
+                if($(window).width() > 767) {
+                    $("#nav-menu").css("display", "flex");
+                } else {
+                    $("#nav-menu").css("display", "none");
+                }
+            });
+
+            // Admission Form Submit & Validation
+            $("#admissionForm").submit(function(e){
+                e.preventDefault();
+                
+                // Reset errors
+                $(".form-control").removeClass("is-invalid");
+                $(".error-message").hide();
+                $("#admissionAlert").hide();
+                
+                let isValid = true;
+                
+                // Validate Nama
+                if($("#reg-nama").val().trim() === "") {
+                    $("#reg-nama").addClass("is-invalid").siblings(".error-message").show();
+                    isValid = false;
+                }
+                
+                // Validate Email
+                const email = $("#reg-email").val().trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if(email === "" || !emailRegex.test(email)) {
+                    $("#reg-email").addClass("is-invalid").siblings(".error-message").show();
+                    isValid = false;
+                }
+                
+                // Validate Sekolah
+                if($("#reg-sekolah").val().trim() === "") {
+                    $("#reg-sekolah").addClass("is-invalid").siblings(".error-message").show();
+                    isValid = false;
+                }
+                
+                // Validate Prodi
+                if($("#reg-prodi").val() === null) {
+                    $("#reg-prodi").addClass("is-invalid").siblings(".error-message").show();
+                    isValid = false;
+                }
+                
+                if(isValid) {
+                    // Tampilkan notifikasi sukses di halaman (menggantikan alert browser)
+                    $("#admissionAlert").slideDown();
+                    // Scroll otomatis ke atas form biar user melihat pesan
+                    $("html, body").animate({
+                        scrollTop: $("#admissionAlert").offset().top - 100
+                    }, 500);
+                    
+                    // Reset form
+                    this.reset();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

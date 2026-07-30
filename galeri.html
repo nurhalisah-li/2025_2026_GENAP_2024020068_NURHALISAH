@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri - Universitas Handayani Makassar</title>
+    <meta name="description" content="Kumpulan momen, kegiatan, dan fasilitas di Universitas Handayani Makassar.">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Menggunakan jQuery sesuai aturan PRD -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        .filter-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .filter-btn {
+            background-color: transparent;
+            border: 2px solid var(--color-border);
+            color: var(--color-text-body);
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            border-color: var(--color-primary);
+        }
+
+        .gallery-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background-color: var(--color-tertiary);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            z-index: 10;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .gallery-video {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background-color: #000;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: #fff;
+            padding: 16px;
+            font-size: 14px;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="assets/handayani.png" alt="Logo UHM"> UNIVERSITAS HANDAYANI MAKASSAR
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-toggle">
+                &#9776;
+            </button>
+
+            <ul class="nav-links label-caps" id="nav-menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="program-studi.html">Program Studi</a></li>
+                <li><a href="berita.html">Berita & Acara</a></li>
+                <li><a href="galeri.html" class="active">Galeri</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+                <li><a href="pendaftaran.html">Pendaftaran</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="display-lg">Galeri Kampus</h1>
+            <p class="body-lg" style="margin-top: var(--spacing-md); color: rgba(255,255,255,0.8);">Merekam setiap momen berharga dan fasilitas unggulan Universitas Handayani Makassar.</p>
+        </div>
+    </header>
+
+    <!-- Gallery Section -->
+    <section class="section">
+        <div class="container">
+            
+            <!-- Filter Navigasi -->
+            <div class="filter-nav">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="fasilitas">Fasilitas</button>
+                <button class="filter-btn" data-filter="wisuda">Wisuda</button>
+                <button class="filter-btn" data-filter="kegiatan">Kegiatan Mahasiswa</button>
+                <button class="filter-btn" data-filter="video">Video</button>
+            </div>
+
+            <!-- Grid Media -->
+            <div class="grid grid-3" id="gallery-grid">
+                
+                <!-- Item: Fasilitas -->
+                <div class="gallery-item" data-category="fasilitas">
+                    <img src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&q=80&w=600" alt="Gedung Kampus" class="gallery-img">
+                    <div class="gallery-caption">Gedung Utama Kampus Terpadu</div>
+                </div>
+
+                <!-- Item: Fasilitas -->
+                <div class="gallery-item" data-category="fasilitas">
+                    <img src="https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&q=80&w=600" alt="Perpustakaan" class="gallery-img">
+                    <div class="gallery-caption">Perpustakaan Digital Terpusat</div>
+                </div>
+
+                <!-- Item: Fasilitas -->
+                <div class="gallery-item" data-category="fasilitas">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600" alt="Laboratorium Komputer" class="gallery-img">
+                    <div class="gallery-caption">Laboratorium Komputer & AI</div>
+                </div>
+
+                <!-- Item: Wisuda -->
+                <div class="gallery-item" data-category="wisuda">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=600" alt="Wisuda 2025" class="gallery-img">
+                    <div class="gallery-caption">Wisuda Angkatan 2025</div>
+                </div>
+
+                <!-- Item: Wisuda -->
+                <div class="gallery-item" data-category="wisuda">
+                    <img src="https://images.unsplash.com/photo-1627556592933-ffe99c1c9aa8?auto=format&fit=crop&q=80&w=600" alt="Momen Kelulusan" class="gallery-img">
+                    <div class="gallery-caption">Momen Perayaan Kelulusan</div>
+                </div>
+
+                <!-- Item: Kegiatan Mahasiswa -->
+                <div class="gallery-item" data-category="kegiatan">
+                    <img src="https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&q=80&w=600" alt="Seminar Nasional" class="gallery-img">
+                    <div class="gallery-caption">Seminar Nasional Teknologi</div>
+                </div>
+
+                <!-- Item: Kegiatan Mahasiswa -->
+                <div class="gallery-item" data-category="kegiatan">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600" alt="Kerja Kelompok" class="gallery-img">
+                    <div class="gallery-caption">Kolaborasi Riset Mahasiswa</div>
+                </div>
+
+                <!-- Item: Video -->
+                <div class="gallery-item" data-category="video">
+                    <!-- Placeholder HTML5 Video. Mute dan Controls disetel untuk demo -->
+                    <video class="gallery-video" controls muted poster="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=600">
+                        <!-- Menggunakan sample video pendek open source -->
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung tag video.
+                    </video>
+                    <div class="gallery-caption">Profil Video Kampus</div>
+                </div>
+
+                <!-- Item: Video -->
+                <div class="gallery-item" data-category="video">
+                    <video class="gallery-video" controls muted poster="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600">
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    </video>
+                    <div class="gallery-caption">Liputan Kegiatan Sosial</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-3">
+                <div>
+                    <h3 class="headline-sm" style="margin-bottom: 16px;">UNIVERSITAS HANDAYANI MAKASSAR</h3>
+                    <p class="body-md">Mencetak generasi unggul, inovatif, dan berintegritas di era digital.</p>
+                </div>
+                <div>
+                    <h4 class="label-caps" style="margin-bottom: 16px; color: var(--color-secondary-container);">Tautan Cepat</h4>
+                    <ul class="body-md" style="line-height: 2;">
+                        <li><a href="tentang.html">Tentang Kampus</a></li>
+                        <li><a href="program-studi.html">Program Studi</a></li>
+                        <li><a href="pendaftaran.html">Pendaftaran Mahasiswa Baru</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="label-caps" style="margin-bottom: 16px; color: var(--color-secondary-container);">Kontak</h4>
+                    <p class="body-md">Jl. Adhyaksa Baru No. 1, Makassar<br>
+                    Telp: (0411) 123456<br>
+                    Email: info@handayani.ac.id</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Universitas Handayani Makassar. Hak Cipta Dilindungi Undang-Undang.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+
+    <!-- Script Interaksi (jQuery) -->
+    <script>
+        $(document).ready(function(){
+            // Mobile Menu Toggle
+            $("#mobile-menu-toggle").click(function(){
+                $("#nav-menu").slideToggle(300);
+            });
+
+            // Handle window resize for menu display
+            $(window).resize(function(){
+                if($(window).width() > 767) {
+                    $("#nav-menu").css("display", "flex");
+                } else {
+                    $("#nav-menu").css("display", "none");
+                }
+            });
+
+            // Gallery Filter Functionality
+            $(".filter-btn").click(function(){
+                // Hapus class active dari semua tombol, dan tambahkan ke yang diklik
+                $(".filter-btn").removeClass("active");
+                $(this).addClass("active");
+
+                // Ambil nilai filter (contoh: "fasilitas")
+                var filterValue = $(this).attr("data-filter");
+
+                // Logika Filter
+                if(filterValue == "all"){
+                    // Tampilkan semua item dengan efek fade
+                    $(".gallery-item").fadeOut(200).promise().done(function(){
+                        $(".gallery-item").fadeIn(300);
+                    });
+                } else {
+                    // Sembunyikan semua, lalu tampilkan yang cocok
+                    $(".gallery-item").fadeOut(200).promise().done(function(){
+                        $(".gallery-item").filter("[data-category='" + filterValue + "']").fadeIn(300);
+                    });
+                }
+            });
+
+            // Lightbox functionality
+            $(".gallery-item .gallery-img").click(function(){
+                const src = $(this).attr("src");
+                const caption = $(this).siblings(".gallery-caption").text();
+                
+                $("#lightbox-img").attr("src", src);
+                $("#lightbox-caption").text(caption);
+                $("#lightbox").fadeIn(300);
+            });
+
+            // Close lightbox
+            $(".lightbox-close, #lightbox").click(function(e){
+                if (e.target !== $("#lightbox-img")[0]) {
+                    $("#lightbox").fadeOut(300);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
